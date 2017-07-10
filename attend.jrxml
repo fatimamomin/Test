@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="attend" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="da24c062-bbd1-4520-911e-2ca29266605f">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     staffattendance.`sa_id` AS staffattendance_sa_id,
+     staffattendance.`staff_id` AS staffattendance_staff_id,
+     staffattendance.`s_type` AS staffattendance_s_type,
+     staffattendance.`date1` AS staffattendance_date1,
+     staffattendance.`w_type` AS staffattendance_w_type,
+     staffattendance.`start_time` AS staffattendance_start_time,
+     staffattendance.`end_time` AS staffattendance_end_time,
+     staffattendance.`working_hours` AS staffattendance_working_hours,
+     staffattendance.`overtime` AS staffattendance_overtime,
+     staffattendance.`leave` AS staffattendance_leave,
+     staffattendance.`reason` AS staffattendance_reason,
+     staffattendance.`payment` AS staffattendance_payment
+FROM
+     `staffattendance` staffattendance]]>
+	</queryString>
+	<field name="staffattendance_sa_id" class="java.lang.Integer"/>
+	<field name="staffattendance_staff_id" class="java.lang.Integer"/>
+	<field name="staffattendance_s_type" class="java.lang.String"/>
+	<field name="staffattendance_date1" class="java.sql.Date"/>
+	<field name="staffattendance_w_type" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

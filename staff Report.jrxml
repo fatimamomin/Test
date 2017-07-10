@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="staff Report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5dbb6c4c-ee91-4276-b8b4-e759498e7d81">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="85"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     staff.`Staff_Id` AS staff_Staff_Id,
+     staff.`name` AS staff_name,
+     staff.`address` AS staff_address,
+     staff.`phone_1` AS staff_phone_1,
+     staff.`phone_2` AS staff_phone_2,
+     staff.`designation` AS staff_designation,
+     staff.`dob` AS staff_dob,
+     staff.`doj` AS staff_doj
+FROM
+     `staff` staff]]>
+	</queryString>
+	<field name="staff_Staff_Id" class="java.lang.Integer"/>
+	<field name="staff_name" class="java.lang.String"/>
+	<field name="staff_address" class="java.lang.String"/>
+	<field name="staff_phone_1" class="java.lang.Integer"/>
+	<field name="staff_phone_2" class="java.lang.Integer"/>
+	<field name="staff_designation" class="java.lang.String"/>
+	<field name="staff_dob" class="java.sql.Date"/>
+	<field name="staff_doj" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="109c28ba-cc13-4f93-9c5b-80b00b520054" x="180" y="23" width="151" height="43"/>
+				<textElement>
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Staff Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="78d8a4c3-b0ca-4e5a-bd3b-2515b0e39164" x="443" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="210fc843-2009-4ab3-bce3-756edda25a3d" x="10" y="30" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Staff_Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="02466183-2f63-4b72-8e0f-1837d45d5013" x="110" y="30" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="94eb2315-4de9-44d8-af71-02ff2a958818" x="231" y="30" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0a68298b-67db-4169-b422-0451faa54374" x="343" y="30" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Phone_1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="feb53e9c-2b95-4f39-9ea0-636217db8994" x="455" y="30" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Designation]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="9e69fcd4-d2d0-4ba3-9747-12fc2142d1f2" x="10" y="50" width="545" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement uuid="8899d9e0-9bf4-439d-812d-8ab9c40d04c8" x="120" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{staff_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="73e4f1dc-3466-4e6b-aaff-bd630708a67f" x="231" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{staff_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="841d453d-cbd4-4569-8f24-62b462ae9449" x="343" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{staff_phone_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d5e0d9fe-c82e-4a64-9ddf-773608692053" x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{staff_designation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2c66eaa1-4209-4ed7-b98e-853b499f4372" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{staff_Staff_Id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

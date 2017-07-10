@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="coursesub" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f648cb76-79b5-4f93-b702-b13aea6c7824">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="csno" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select * from course
+where sno=$P{csno}]]>
+	</queryString>
+	<field name="cno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<textField>
+				<reportElement uuid="fc27508e-fafd-4dc4-96b5-b43d38e9b7f9" x="150" y="20" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{cname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f66a8c8b-294a-4126-b5f4-6cdd54f5dbeb" x="0" y="20" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{cno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b9729fc2-f002-4688-a482-0241b5cb2a76" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[cno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="411383a6-4e77-4cb6-9102-c6f16ad11c12" x="150" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[cname]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

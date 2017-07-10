@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Configpara" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0bba470c-3743-45bd-9293-087c07ca8ae7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="93"/>
+	<parameter name="ctype" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     c_id,
+     c_type,
+     basicsalary,
+     hourlysalary,
+   ha,
+     ta  ,
+     pf ,
+     esic
+FROM
+     config
+where  c_type=$P{ctype}]]>
+	</queryString>
+	<field name="c_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="c_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="basicsalary" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hourlysalary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ha" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ta" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pf" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="esic" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6dbfa886-5be6-4120-b6c2-dcdb4db0d6f5" x="182" y="0" width="167" height="35"/>
+				<textElement>
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[ConfigDetails]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="669d1cac-b612-46f1-976a-1ac5e4fdfc0d" x="423" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="242" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f2df9374-90a6-4a95-8f58-cc388bdf2379" x="57" y="10" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Designation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0cfaa7ae-95aa-4ef5-94d3-25efd3426177" x="57" y="43" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Basic Salary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ad7d1da2-634b-48c1-8372-261cb1401b94" x="57" y="83" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hourly Salary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="636c7ca2-8795-4f6e-849f-879b95bdd373" x="57" y="114" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a9dd2ddf-3b4e-4667-b659-7cb1dcf33fd4" x="57" y="151" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="35dcbf18-df50-44c9-99ac-8cde1de17aa3" x="57" y="179" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pf]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="23b921e8-759c-4eb1-ab75-3e5d4dff8665" x="57" y="222" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esic]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="2dc84203-fbd6-4ff8-a62c-3ac06f97ff4c" x="272" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{c_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4edbc865-85e1-4bc9-a48d-7f04a9d91079" x="272" y="43" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{basicsalary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="773d105b-01ec-4e41-ab05-fab7b67e5a54" x="272" y="83" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{hourlysalary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ce3def3a-facf-4fe4-948f-193963a061a5" x="272" y="114" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="daae526b-cdc4-436d-b1ed-9d9ef5bd41de" x="272" y="179" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{pf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9e847f8c-bd4b-418a-b0fc-a23476a2baa3" x="272" y="212" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{esic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="01c960c5-e2f4-47c2-beff-e5087f7ffbd1" x="272" y="151" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ta}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="45ae9436-5acf-4c2b-93d7-a2f557a48613" x="212" y="10" width="1" height="232"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

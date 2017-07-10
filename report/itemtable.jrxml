@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="itemtable" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="704af5f5-0cd0-4968-bc38-187f67de1cb9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="80"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#00FFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFFFFF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="reportitemtable" uuid="97e00361-b310-466f-9b5c-02561ba371a1">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     item2.`item_id` AS item2_item_id,
+     item2.`type` AS item2_type,
+     item2.`item_name` AS item2_item_name,
+     item2.`item_type` AS item2_item_type,
+     item2.`price` AS item2_price,
+     item2.`Quantity` AS item2_Quantity
+FROM
+     `item2` item2]]>
+		</queryString>
+		<field name="item2_item_id" class="java.lang.Integer"/>
+		<field name="item2_type" class="java.lang.String"/>
+		<field name="item2_item_name" class="java.lang.String"/>
+		<field name="item2_item_type" class="java.lang.String"/>
+		<field name="item2_price" class="java.lang.Integer"/>
+		<field name="item2_Quantity" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="tableitem2" uuid="fbc4f68c-8fdf-4b0a-ab48-582810220110">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     item2.`item_id` AS item2_item_id,
+     item2.`type` AS item2_type,
+     item2.`item_name` AS item2_item_name,
+     item2.`item_type` AS item2_item_type,
+     item2.`price` AS item2_price,
+     item2.`Quantity` AS item2_Quantity
+FROM
+     `item2` item2]]>
+		</queryString>
+		<field name="item2_item_id" class="java.lang.Integer"/>
+		<field name="item2_type" class="java.lang.String"/>
+		<field name="item2_item_name" class="java.lang.String"/>
+		<field name="item2_item_type" class="java.lang.String"/>
+		<field name="item2_price" class="java.lang.Integer"/>
+		<field name="item2_Quantity" class="java.lang.Integer"/>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     item2.`item_id` AS item2_item_id,
+     item2.`type` AS item2_type,
+     item2.`item_name` AS item2_item_name,
+     item2.`item_type` AS item2_item_type,
+     item2.`price` AS item2_price,
+     item2.`Quantity` AS item2_Quantity
+FROM
+     `item2` item2]]>
+	</queryString>
+	<field name="item2_item_id" class="java.lang.Integer"/>
+	<field name="item2_type" class="java.lang.String"/>
+	<field name="item2_item_name" class="java.lang.String"/>
+	<field name="item2_item_type" class="java.lang.String"/>
+	<field name="item2_price" class="java.lang.Integer"/>
+	<field name="item2_Quantity" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="5290f9cc-6663-4ba0-a897-80dff64ae6d2" key="table 1" style="table 1" isPrintRepeatedValues="false" x="0" y="0" width="450" height="50" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="tableitem2" uuid="c8a9fd09-4ca0-4be6-863e-f4e9cd542993">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="2a60dca3-937a-494f-93a2-73c6cc16ca0e">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement uuid="03041521-7414-460d-b7ff-c600532e014e" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[item2_type]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement uuid="5bbf3f26-0e78-40b5-b9f2-daf741d04619" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{item2_type}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="cac3e6da-8080-4451-b062-9cb0e372809b">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement uuid="c7ee0f82-fac1-49fa-9bfa-fd3e16010b66" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[item2_item_name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement uuid="a9430997-53a4-4ad8-86d3-a1902c62c1ec" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{item2_item_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="1053209e-34a5-4892-ad73-87cef16ad7d2">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement uuid="b9367d87-a977-4cd7-8dd6-d2e73600acbc" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[item2_item_type]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement uuid="ace7754d-b9e8-486d-a2a2-bf7c17353781" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{item2_item_type}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="d032ed92-c02e-45d6-9dc9-df74af7accef">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement uuid="48ce18f8-ffbc-437a-8652-459a330d4e5f" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[item2_price]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement uuid="b4c57129-6ed2-43a4-a88c-2e2b74ddccea" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{item2_price}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="7e6141d2-822f-4d1f-82b7-64eb67fb1872">
+						<jr:columnHeader style="table 1_CH" height="30">
+							<staticText>
+								<reportElement uuid="8afc0961-3d38-4da9-8757-96ea6785f826" x="0" y="0" width="90" height="30"/>
+								<textElement/>
+								<text><![CDATA[item2_Quantity]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement uuid="82678393-90a2-40ef-8248-3387298886e7" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{item2_Quantity}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

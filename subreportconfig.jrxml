@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreportconfig" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ae3d0063-6410-459c-9acd-9f2f7c594f86">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="32"/>
+	<parameter name="type" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     config.`c_id` AS config_c_id,
+     config.`c_type` AS config_c_type,
+     config.`basicsalary` AS config_basicsalary,
+     config.`hourlysalary` AS config_hourlysalary,
+     config.`ha` AS config_ha,
+     config.`ta` AS config_ta,
+     config.`pf` AS config_pf,
+     config.`esic` AS config_esic
+FROM
+     `config` config
+where config.`c_type`=$P{type}]]>
+	</queryString>
+	<field name="config_c_id" class="java.lang.Integer"/>
+	<field name="config_c_type" class="java.lang.String"/>
+	<field name="config_basicsalary" class="java.lang.Integer"/>
+	<field name="config_hourlysalary" class="java.lang.Double"/>
+	<field name="config_ha" class="java.lang.Double"/>
+	<field name="config_ta" class="java.lang.Double"/>
+	<field name="config_pf" class="java.lang.Double"/>
+	<field name="config_esic" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="300" splitType="Stretch">
+			<textField>
+				<reportElement uuid="d1421623-fe1f-40f4-aad6-a6aa2e21baec" x="176" y="12" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{config_c_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="07392a37-ea79-4948-b1c7-beacdc0ebf3f" x="176" y="44" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{config_basicsalary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="621153ee-4f05-4867-a3ca-ba721d5cdda5" x="176" y="74" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{config_hourlysalary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e8f33e2e-489f-4f80-aa30-08b0a918e682" x="176" y="112" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{config_hourlysalary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f3b56643-fbed-45b8-988b-57582020cad7" x="176" y="142" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{config_ha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fcb0b919-de8d-4ecb-923e-27d971468305" x="179" y="176" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{config_ta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4a87abe8-3dec-4f02-8a8f-be974c15f94d" x="179" y="212" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{config_pf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="222448a4-358b-47be-b085-8ced1499945d" x="179" y="243" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{config_esic}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

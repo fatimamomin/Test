@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="studmain" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4138d560-0c90-4895-b879-247c63c0647c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="sno" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select * from stud
+where sno=$P{sno}]]>
+	</queryString>
+	<field name="sno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a37898b6-d306-47d5-a519-f5ebeb92f668" x="215" y="35" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Student Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="a1e470a2-4943-4a09-b4d8-94f49610b007" x="421" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="0a87f68d-748c-43d9-bce9-74ad9437216d" x="0" y="41" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{sno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="18f3a649-f943-475b-a920-9e160c609bb8" x="114" y="41" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{sname}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="c6e4bd54-4582-44d2-92fa-855f3e06e3f1" x="233" y="0" width="200" height="61"/>
+				<subreportParameter name="csno">
+					<subreportParameterExpression><![CDATA[$F{sno}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["D:\\PROGRAMFILES\\NETBENAS_INSTALLED\\Test\\coursesub.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="6598b506-437e-47cc-b24f-09046b9d009c" x="114" y="20" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Sname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="26c01614-8a03-46ec-a20a-01b22a99cfcd" x="0" y="20" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Sno]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
