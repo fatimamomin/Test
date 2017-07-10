@@ -78,10 +78,12 @@ public class Item extends javax.swing.JFrame {
             else
             {
                 System.out.println("no record is added");
+                 
+                
                 
             }
         }catch(Exception e)
-        {
+        { System.out.println("exception has occured");
             System.out.println(e);
         }
     }
